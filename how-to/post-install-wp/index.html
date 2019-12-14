@@ -38,7 +38,7 @@
     
     
       
-        <title>WordPress post-install automation - WordOps Documentation</title>
+        <title>Post install wp - WordOps Documentation</title>
       
     
     
@@ -89,7 +89,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#wordpress-post-install-automation" tabindex="1" class="md-skip">
+      <a href="#first-thing-first-configuring-the-custom-repository" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -115,7 +115,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                WordPress post-install automation
+                Post install wp
               
             </span>
           
@@ -1030,8 +1030,6 @@
 <nav class="md-nav md-nav--secondary">
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
@@ -1089,8 +1087,9 @@
                   <a href="https://github.com/WordOps/docs.wordops.net/edit/master/docs/how-to/post-install-wp.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="wordpress-post-install-automation">WordPress post-install automation<a class="headerlink" href="#wordpress-post-install-automation" title="Permanent link">&para;</a></h1>
-<p>There are multiple, viable approaches to automate post-installation of a WordPress blog using WordOps, without the need of adding new commands or increasing overall complexity.</p>
+                  <h1>Post install wp</h1>
+                
+                <p>There are multiple, viable approaches to automate post-installation of a WordPress blog using WordOps, without the need of adding new commands or increasing overall complexity.</p>
 <p>For this tutorial, we're going to show how to automatically install plugins and themes from official WordPress repository, as well as how to install custom plugins and themes, not available at wordpress.org.</p>
 <h2 id="first-thing-first-configuring-the-custom-repository">First thing first: configuring the "custom" repository<a class="headerlink" href="#first-thing-first-configuring-the-custom-repository" title="Permanent link">&para;</a></h2>
 <p>The custom plugins and themes you're going to install on your newly installed blogs must be publicly available on a particular location of your knowledge. It's from there that our script will fetch them to add to WordPress.</p>
@@ -1144,7 +1143,9 @@ chown www-data:www-data wp-content -R
 <h3 id="example-of-how-to-use-the-script">Example of how to use the script<a class="headerlink" href="#example-of-how-to-use-the-script" title="Permanent link">&para;</a></h3>
 <div class="codehilite"><pre><span></span><span class="c1"># install the blog</span>
 wo site create thedomain.com --wpredis --php73
-/scriprs/post-wp-install.sh thedomain.com
+
+<span class="c1"># run the script</span>
+/scripts/post-wp-install.sh thedomain.com
 </pre></div>
 
 <h3 id="notes-about-the-script">Notes about the script<a class="headerlink" href="#notes-about-the-script" title="Permanent link">&para;</a></h3>
