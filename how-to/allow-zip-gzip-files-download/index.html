@@ -38,7 +38,7 @@
     
     
       
-        <title>Configure LetsEncrypt DNS API - WordOps Documentation</title>
+        <title>How to allow zip & gzip files download - WordOps Documentation</title>
       
     
     
@@ -89,7 +89,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#lets-encrypt-dns-api-configuration" tabindex="1" class="md-skip">
+      <a href="#allow-zip-gzip-files-download" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -115,7 +115,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Configure LetsEncrypt DNS API
+                How to allow zip & gzip files download
               
             </span>
           
@@ -731,83 +731,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Configure LetsEncrypt DNS API
-      </label>
-    
-    <a href="./" title="Configure LetsEncrypt DNS API" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../configure-letsencrypt-dns-api-validation/" title="Configure LetsEncrypt DNS API" class="md-nav__link">
       Configure LetsEncrypt DNS API
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#dns-api-configuration" class="md-nav__link">
-    DNS API configuration
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#step-1-get-your-api-credentials" class="md-nav__link">
-    Step 1: get your API credentials
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-2-set-your-credentials-with-acmesh-variables" class="md-nav__link">
-    Step 2: set your credentials with acme.sh variables
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-3-issue-your-certificate" class="md-nav__link">
-    Step 3: issue your certificate
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#informations" class="md-nav__link">
-    Informations
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -875,11 +803,69 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../allow-zip-gzip-files-download/" title="How to allow zip & gzip files download" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        How to allow zip & gzip files download
+      </label>
+    
+    <a href="./" title="How to allow zip & gzip files download" class="md-nav__link md-nav__link--active">
       How to allow zip & gzip files download
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#edit-nginx-configuration" class="md-nav__link">
+    Edit Nginx configuration
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#for-all-sites" class="md-nav__link">
+    For all sites
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-wordpress-sites" class="md-nav__link">
+    For WordPress sites
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -1137,43 +1123,29 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#dns-api-configuration" class="md-nav__link">
-    DNS API configuration
+  <a href="#edit-nginx-configuration" class="md-nav__link">
+    Edit Nginx configuration
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#step-1-get-your-api-credentials" class="md-nav__link">
-    Step 1: get your API credentials
+  <a href="#for-all-sites" class="md-nav__link">
+    For all sites
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#step-2-set-your-credentials-with-acmesh-variables" class="md-nav__link">
-    Step 2: set your credentials with acme.sh variables
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#step-3-issue-your-certificate" class="md-nav__link">
-    Step 3: issue your certificate
+  <a href="#for-wordpress-sites" class="md-nav__link">
+    For WordPress sites
   </a>
   
 </li>
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#informations" class="md-nav__link">
-    Informations
-  </a>
   
 </li>
       
@@ -1193,77 +1165,44 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/WordOps/docs.wordops.net/edit/master/docs/how-to/configure-letsencrypt-dns-api-validation.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/WordOps/docs.wordops.net/edit/master/docs/how-to/allow-zip-gzip-files-download.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="lets-encrypt-dns-api-configuration">Let's Encrypt DNS API configuration<a class="headerlink" href="#lets-encrypt-dns-api-configuration" title="Permanent link">&para;</a></h1>
-<p>WordOps use acme.sh to handle SSL certificates, which supports domain validation using DNS API.
-This feature is optional to issue domain and subdomain certificates, but is required to issue wildcard certificates.</p>
-<h2 id="dns-api-configuration">DNS API configuration<a class="headerlink" href="#dns-api-configuration" title="Permanent link">&para;</a></h2>
-<p>WordOps use the Acme client <a href="https://github.com/Neilpang/acme.sh">acme.sh</a> to handle Let's Encrypt SSL certificates. It support DNS API with the most part of popular DNS providers, including Cloudflare, DigitalOcean, OVH, Amazon Route53, Linode, Gandi and many others.</p>
-<p>In this example, we will configure Cloudflare DNS API, but configuration will be pretty similar with other DNS providers.</p>
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>DNS providers list and configurations are available in <a href="https://github.com/Neilpang/acme.sh/wiki/dnsapi">acme.sh wiki</a></p>
-</div>
-<h3 id="step-1-get-your-api-credentials">Step 1: get your API credentials<a class="headerlink" href="#step-1-get-your-api-credentials" title="Permanent link">&para;</a></h3>
-<p>Requirements:</p>
-<ul>
-<li>your Cloudflare account email address</li>
-<li>your Global API Key available in your <a href="https://dash.cloudflare.com/profile">Cloudflare profile</a></li>
-</ul>
-<h3 id="step-2-set-your-credentials-with-acmesh-variables">Step 2: set your credentials with acme.sh variables<a class="headerlink" href="#step-2-set-your-credentials-with-acmesh-variables" title="Permanent link">&para;</a></h3>
-<p>Before issuing your first SSL certificate with DNS API, you have to define your API credentials with the command <code class="codehilite"><span class="err">export</span></code> :</p>
-<p>Example for Cloudflare:</p>
-<div class="codehilite"><pre><span></span><span class="nb">export</span> <span class="nv">CF_Key</span><span class="o">=</span><span class="s2">&quot;sdfsdfsdfljlbjkljlkjsdfoiwje&quot;</span>
-<span class="nb">export</span> <span class="nv">CF_Email</span><span class="o">=</span><span class="s2">&quot;xxxx@sss.com&quot;</span>
+                <h1 id="allow-zip-gzip-files-download">Allow zip &amp; gzip files download<a class="headerlink" href="#allow-zip-gzip-files-download" title="Permanent link">&para;</a></h1>
+<p>By default, WordOps deny access to zip, gzip and other archives format to avoid unwanted access to users's backup.
+If you absolutely need to download those files, you can customize WordOps Nginx configuration.</p>
+<h2 id="edit-nginx-configuration">Edit Nginx configuration<a class="headerlink" href="#edit-nginx-configuration" title="Permanent link">&para;</a></h2>
+<h3 id="for-all-sites">For all sites<a class="headerlink" href="#for-all-sites" title="Permanent link">&para;</a></h3>
+<p>For both WordPress and non-WordPress sites, the first file to edit is <code class="codehilite"><span class="err">/etc/nginx/common/locations-wo.conf</span></code> :</p>
+<div class="codehilite"><pre><span></span>nano /etc/nginx/common/locations-wo.conf
 </pre></div>
 
-<ul>
-<li>CF_Key: Cloudflare Global API key available in your <a href="https://dash.cloudflare.com/profile">Cloudflare profile</a></li>
-<li>CF_Email: Your Cloudflare account email address</li>
-</ul>
-<p>Example with DigitalOcean:</p>
-<div class="codehilite"><pre><span></span><span class="nb">export</span> <span class="nv">DO_API_KEY</span><span class="o">=</span><span class="s2">&quot;75310dc4ca779ac39a19f6355db573b49ce92ae126553ebd61ac3a3ae34834cc&quot;</span>
+<p>You will find the following directive :</p>
+<div class="codehilite"><pre><span></span><span class="c1"># Deny backup extensions &amp; log files and return 403 forbidden</span>
+<span class="k">location</span> <span class="p">~</span><span class="sr">*</span> <span class="s">&quot;\.(old|orig|original|php</span><span class="c1">#|php~|php_bak|save|swo|aspx?|tpl|sh|bash|bak?|cfg|cgi|dll|exe|git|hg|ini|jsp|log|mdb|out|sql|svn|swp|tar|rdf|gz|zip|bz2|7z|pem|asc|conf|dump)$&quot; {</span>
+    <span class="s">deny</span> <span class="s">all</span><span class="p">;</span>
+<span class="k">}</span>
 </pre></div>
 
-<p>Example with GoDaddy:</p>
-<div class="codehilite"><pre><span></span><span class="nb">export</span> <span class="nv">GD_Key</span><span class="o">=</span><span class="s2">&quot;sdfsdfsdfljlbjkljlkjsdfoiwje&quot;</span>
-<span class="nb">export</span> <span class="nv">GD_Secret</span><span class="o">=</span><span class="s2">&quot;asdfsdafdsfdsfdsfdsfdsafd&quot;</span>
+<p>You just have to remove the files extensions you want to download. Then save your changes, and reload Nginx with <code class="codehilite"><span class="err">wo stack reload --nginx</span></code>.</p>
+<p>To make sure your configuration will not be overwritted later, you have to create an empty file <code class="codehilite"><span class="err">/etc/nginx/common/locations-wo.conf.custom</span></code> :</p>
+<div class="codehilite"><pre><span></span>touch /etc/nginx/common/locations-wo.conf.custom
 </pre></div>
 
-<div class="admonition info">
-<p class="admonition-title">Info</p>
-<p>DNS providers list and configurations are available in <a href="https://github.com/Neilpang/acme.sh/wiki/dnsapi">Acme.sh Wiki</a></p>
-</div>
-<h3 id="step-3-issue-your-certificate">Step 3: issue your certificate<a class="headerlink" href="#step-3-issue-your-certificate" title="Permanent link">&para;</a></h3>
-<p>For a new site secured with a wildcard SSL certificates with Cloudflare DNS API</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>If you are using <code class="codehilite"><span class="err">sudo</span></code> to run wo commands, you need to use <code class="codehilite"><span class="err">sudo -E</span></code> to keep DNS API crendentials variables available for acme.sh
-So just put <code class="codehilite"><span class="err">sudo -E</span></code> before the following commands instead of just <code class="codehilite"><span class="err">sudo</span></code>.</p>
-</div>
-<div class="codehilite"><pre><span></span>wo site create site.tld --wp --letsencrypt<span class="o">=</span>wildcard --dns<span class="o">=</span>dns_cf
+<h3 id="for-wordpress-sites">For WordPress sites<a class="headerlink" href="#for-wordpress-sites" title="Permanent link">&para;</a></h3>
+<p>For WordPress sites, there is an additional configuration in <code class="codehilite"><span class="err">/etc/nginx/common/wpcommon-php7x.conf</span></code> where <code class="codehilite"><span class="err">7x</span></code> is the PHP version, it can be <code class="codehilite"><span class="err">72</span></code>, <code class="codehilite"><span class="err">73</span></code> or <code class="codehilite"><span class="err">74</span></code>.</p>
+<p>Example, for a site running with PHP 7.4 :</p>
+<div class="codehilite"><pre><span></span>nano /etc/nginx/common/wpcommon-php74.conf
 </pre></div>
 
-<ul>
-<li><code class="codehilite"><span class="err">--letsencrypt=wildcard</span></code>: issue a wildcard certificate <code class="codehilite"><span class="err">domain.tld</span></code> + <code class="codehilite"><span class="err">*.domain.tld</span></code></li>
-<li><code class="codehilite"><span class="err">--dns=dns_cf</span></code>: enable DNS API mode with Cloudflare.</li>
-</ul>
-<p>For an existant secured with a simple SSL certificate (site + <a href="http://www.site.tld">www.site.tld</a>) with DigitalOcean DNS API</p>
-<div class="codehilite"><pre><span></span>wo site update site.tld -le --dns<span class="o">=</span>dns_dgon
+<p>You will find the following directive :</p>
+<div class="codehilite"><pre><span></span>    <span class="k">location</span> <span class="p">~</span><span class="sr">*</span> <span class="s">\.(php|gz|log|zip|tar|rar|xz)</span>$ <span class="p">{</span>
+        <span class="c1">#Prevent Direct Access Of PHP Files &amp; Backups from Web Browsers</span>
+        <span class="kn">deny</span> <span class="s">all</span><span class="p">;</span>
+    <span class="p">}</span>
 </pre></div>
 
-<ul>
-<li><code class="codehilite"><span class="err">-le</span></code>: issue a certificate for <code class="codehilite"><span class="err">domain.tld</span></code> + <code class="codehilite"><span class="err">www.domain.tld</span></code></li>
-<li><code class="codehilite"><span class="err">--dns=dns_dgon</span></code>: enable DNS API mode with DigitalOcean</li>
-</ul>
-<h2 id="informations">Informations<a class="headerlink" href="#informations" title="Permanent link">&para;</a></h2>
-<ul>
-<li>You can also use DNS API to issue domain and subdomain certificates.</li>
-<li><code class="codehilite"><span class="err">--dns=dns_cf</span></code> define the DNS provider to use. With DigitalOcean, it would be <code class="codehilite"><span class="err">--dns=dns_dgon</span></code></li>
-<li>After issuing a first certificate using DNS API, your API credentials will be saved in <code class="codehilite"><span class="err">/etc/letsencrypt/config/account.conf</span></code>. You do not need to define them anymore.</li>
-</ul>
+<p>Do the same than in the previous example, by removing files extensions you want to download, reload Nginx and create an empty <code class="codehilite"><span class="na">.custom</span></code> file to make sure your custom configuration will not be overwritted.</p>
                 
                   
                 
@@ -1285,7 +1224,7 @@ So just put <code class="codehilite"><span class="err">sudo -E</span></code> bef
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../secure-22222/" title="Secure WordOps backend" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../post-install-wp/" title="Automate WordPress post-install" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1294,19 +1233,19 @@ So just put <code class="codehilite"><span class="err">sudo -E</span></code> bef
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Secure WordOps backend
+                Automate WordPress post-install
               </span>
             </div>
           </a>
         
         
-          <a href="../get-a-plus-grade-ssllabs/" title="Get A+ grade on ssllabs" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../guides/" title="Overview" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Get A+ grade on ssllabs
+                Overview
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

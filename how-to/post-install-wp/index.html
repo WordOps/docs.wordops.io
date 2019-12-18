@@ -38,7 +38,7 @@
     
     
       
-        <title>Post install wp - WordOps Documentation</title>
+        <title>Automate WordPress post-install - WordOps Documentation</title>
       
     
     
@@ -115,7 +115,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Post install wp
+                Automate WordPress post-install
               
             </span>
           
@@ -183,14 +183,16 @@
       
         
 
-<nav class="md-tabs" data-md-component="tabs">
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
   <div class="md-tabs__inner md-grid">
     <ul class="md-tabs__list">
       
         
   <li class="md-tabs__item">
     
-      <a href="../.." class="md-tabs__link md-tabs__link--active">
+      <a href="../.." class="md-tabs__link">
         Home
       </a>
     
@@ -241,7 +243,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../" class="md-tabs__link">
+        <a href="../" class="md-tabs__link md-tabs__link--active">
           How to
         </a>
       
@@ -672,10 +674,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
     
     <label class="md-nav__link" for="nav-5">
       How to
@@ -779,6 +783,91 @@
   <li class="md-nav__item">
     <a href="../ubuntu-lts-hwe-stacks/" title="Install HWE stacks on Ubuntu" class="md-nav__link">
       Install HWE stacks on Ubuntu
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Automate WordPress post-install
+      </label>
+    
+    <a href="./" title="Automate WordPress post-install" class="md-nav__link md-nav__link--active">
+      Automate WordPress post-install
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#first-thing-first-configuring-the-custom-repository" class="md-nav__link">
+    First thing first: configuring the "custom" repository
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-script-itself" class="md-nav__link">
+    The script itself
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-of-how-to-use-the-script" class="md-nav__link">
+    Example of how to use the script
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notes-about-the-script" class="md-nav__link">
+    Notes about the script
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../allow-zip-gzip-files-download/" title="How to allow zip & gzip files download" class="md-nav__link">
+      How to allow zip & gzip files download
     </a>
   </li>
 
@@ -1087,7 +1176,7 @@
                   <a href="https://github.com/WordOps/docs.wordops.net/edit/master/docs/how-to/post-install-wp.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>Post install wp</h1>
+                  <h1>Automate WordPress post-install</h1>
                 
                 <p>There are multiple, viable approaches to automate post-installation of a WordPress blog using WordOps, without the need of adding new commands or increasing overall complexity.</p>
 <p>For this tutorial, we're going to show how to automatically install plugins and themes from official WordPress repository, as well as how to install custom plugins and themes, not available at wordpress.org.</p>
@@ -1119,7 +1208,7 @@
     <span class="nb">exit</span> <span class="m">1</span>
 <span class="k">fi</span>
 
-<span class="nb">cd</span> <span class="s2">&quot;/var/www/</span><span class="si">${</span><span class="nv">DOM</span><span class="si">}</span><span class="s2">/htdocs&quot;</span>
+<span class="nb">cd</span> <span class="s2">&quot;/var/www/</span><span class="si">${</span><span class="nv">DOM</span><span class="si">}</span><span class="s2">/htdocs&quot;</span> <span class="o">||</span> <span class="nb">exit</span> <span class="m">1</span>
 
 <span class="c1">### Install plugins from official repository</span>
 wp plugin install wordpress-seo --allow-root --activate
@@ -1168,6 +1257,41 @@ wo site create thedomain.com --wpredis --php73
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../ubuntu-lts-hwe-stacks/" title="Install HWE stacks on Ubuntu" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Install HWE stacks on Ubuntu
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../allow-zip-gzip-files-download/" title="How to allow zip & gzip files download" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                How to allow zip & gzip files download
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
