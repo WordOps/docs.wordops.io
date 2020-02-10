@@ -1288,13 +1288,13 @@
 </div>
 <p>It will also create all new Nginx configurations before syncing the old nginx directory with the new one. This way, if you have added custom Nginx configuration, you will find them at the same place than before the migration.</p>
 <h2 id="post-installation-steps">Post installation steps<a class="headerlink" href="#post-installation-steps" title="Permanent link">&para;</a></h2>
-<p>After installing WordOps, if all your sites are still working properly, you can start using WordOps the same way than EasyEngine. For sites previously created with EasyEngine, you will have to changes some settings in their configuration to use WordOps new configurations. This can be done with the command <code class="codehilite"><span class="err">wo site update</span></code> or by editing manually their configuration with the command <code class="codehilite"><span class="err">wo site edit</span></code>.</p>
+<p>After installing WordOps, if all your sites are still working properly, you can start using WordOps the same way as EasyEngine. For sites previously created with EasyEngine, you will have to change some settings in their configuration to use WordOps new configurations. This can be done with the command <code class="codehilite"><span class="err">wo site update</span></code> or by editing manually their configuration with the command <code class="codehilite"><span class="err">wo site edit</span></code>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>If some sites are still using php5.6 or php7.0 and are not compatible with newer PHP versions, do not change their vhost configuration. WordOps minimum and default PHP version is PHP 7.2. Additionally, sites previously created with <code class="codehilite"><span class="err">--w3tc</span></code>  will have to use another cache option as we deprecated this stack.</p>
 </div>
 <h3 id="updating-site-configuration">Updating site configuration<a class="headerlink" href="#updating-site-configuration" title="Permanent link">&para;</a></h3>
-<p>You have the choice between two method to update your site configuration:</p>
+<p>You have the choice between two methods to update your site configuration:</p>
 <ul>
 <li>
 <p>With the command <code class="codehilite"><span class="err">wo site update</span></code> (recommended)</p>
@@ -1308,13 +1308,13 @@
 <div class="codehilite"><pre><span></span>wo site update site.tld &lt;options&gt;
 </pre></div>
 
-<p>To update your sites configuration, you can enable PHP 7.3 on your site with the argument <code class="codehilite"><span class="err">--php73</span></code> and then disable it with the argument <code class="codehilite"><span class="err">--php73=off</span></code> to use PHP 7.2.
+<p>To update your sites configuration, you can enable PHP 7.3 on your site with the argument <code class="codehilite"><span class="err">--php73</span></code> and then disable it with the argument <code class="codehilite"><span class="err">--php72</span></code> to use PHP 7.2.
 This will regenerate your site Nginx vhost and apply the new configuration.</p>
 <p><strong>Example</strong>:</p>
 <div class="codehilite"><pre><span></span><span class="c1"># enable PHP 7.3 to regenerate site configuration</span>
 wo site update site.tld --php73
 <span class="c1"># disable PHP 7.3 to use PHP 7.2 (optional)</span>
-wo site update site.tld --php73<span class="o">=</span>off
+wo site update site.tld --php72
 </pre></div>
 
 <h4 id="manually-editing-site-configuration">Manually editing site configuration<a class="headerlink" href="#manually-editing-site-configuration" title="Permanent link">&para;</a></h4>
@@ -1324,10 +1324,10 @@ wo site update site.tld --php73<span class="o">=</span>off
 
 <div class="admonition info">
 <p class="admonition-title">Info</p>
-<p>You will be prompt to choose a text editor, if you are new to linux, we recommend you to choose nano.</p>
+<p>You will be prompted to choose a text editor, if you are new to linux, we recommend you to choose nano.</p>
 </div>
 <p>In Nginx vhost configuration, you will find several lines beginning with <code class="codehilite"><span class="err">include</span></code>.</p>
-<p>To use new WordOps configuration, you just have to replace the path of the configuration set after <code class="codehilite"><span class="err">include</span></code>.  For example <code class="codehilite"><span class="err">include common/locations.conf;</span></code> have to be replaced by <code class="codehilite"><span class="err">include common/locations-wo.conf;</span></code>.</p>
+<p>To use the new WordOps configuration, you just have to replace the path of the configuration set after <code class="codehilite"><span class="err">include</span></code>.  For example <code class="codehilite"><span class="err">include common/locations.conf;</span></code> has to be replaced by <code class="codehilite"><span class="err">include common/locations-wo.conf;</span></code>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Make sure to not remove the <code class="codehilite"><span class="err">;</span></code> at the end of the line when updating Nginx configuration.</p>
@@ -1398,6 +1398,10 @@ sudo service mysql start
 
 <p>Then you can reinstall the latest MariaDB-server version with WordOps:</p>
 <div class="codehilite"><pre><span></span>wo stack install --mysql
+</pre></div>
+
+<p>And finally make sure any database table structure upgrades are applied:</p>
+<div class="codehilite"><pre><span></span>wo stack upgrade --mysql
 </pre></div>
                 
                   
