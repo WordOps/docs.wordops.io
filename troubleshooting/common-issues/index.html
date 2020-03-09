@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.3">
     
     
       
@@ -42,7 +42,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.1b62728e.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.adb8469c.css">
       
         <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
       
@@ -53,14 +53,14 @@
       
     
     
-      <script src="../../assets/javascripts/modernizr.268332fc.js"></script>
+      <script src="../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
     
     <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
     
-      <link rel="manifest" href="../../manifest.webmanifest">
+      <link rel="manifest" type="application/manifest+json" href="../../manifest.webmanifest" crossorigin="use-credentials">
     
     
       <link rel="stylesheet" href="../../css/extra.css">
@@ -89,7 +89,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#common-issues" tabindex="1" class="md-skip">
+      <a href="#common-issues" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -98,9 +98,9 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../.." title="WordOps Documentation" class="md-header-nav__button md-logo">
+        <a href="../.." title="WordOps Documentation" aria-label="WordOps Documentation" class="md-header-nav__button md-logo">
           
-            <img src="../../images/logo-icon.png" width="24" height="24">
+            <img alt="logo" src="../../images/logo-icon.png" width="24" height="24">
           
         </a>
       </div>
@@ -129,7 +129,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
       <label class="md-icon md-search__icon" for="__search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
         &#xE5CD;
@@ -306,7 +306,7 @@
   <label class="md-nav__title md-nav__title--site" for="__drawer">
     <a href="../.." title="WordOps Documentation" class="md-nav__button md-logo">
       
-        <img src="../../images/logo-icon.png" width="48" height="48">
+        <img alt="logo" src="../../images/logo-icon.png" width="48" height="48">
       
     </a>
     WordOps Documentation
@@ -809,6 +809,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../how-to/setup-basic-auth/" title="Setup basic auth on site" class="md-nav__link">
+      Setup basic auth on site
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1174,8 +1186,8 @@
 <h2 id="the-command-wo-update-failed">The command <code class="codehilite"><span class="err">wo update</span></code> failed<a class="headerlink" href="#the-command-wo-update-failed" title="Permanent link">&para;</a></h2>
 <p>This is a known issue with WordOps v3.9.6 which has been fixed with the maintenance release v3.9.6.1.
 As a workaround you can either use the command <code class="codehilite"><span class="err">wo update --beta</span></code> or run again the install command:</p>
-<div class="codehilite"><pre><span></span>wget -qO wo wops.cc <span class="o">&amp;&amp;</span> sudo bash wo
-</pre></div>
+<div class="codehilite"><pre><span></span><code>wget -qO wo wops.cc <span class="o">&amp;&amp;</span> sudo bash wo
+</code></pre></div>
 
 <hr />
 <h2 id="wordops-failed-to-issue-ssl-certificate">WordOps failed to issue SSL certificate<a class="headerlink" href="#wordops-failed-to-issue-ssl-certificate" title="Permanent link">&para;</a></h2>
@@ -1187,12 +1199,12 @@ As a workaround you can either use the command <code class="codehilite"><span cl
 <p>If you are using the default webroot validation :</p>
 <p>Make sure your domain is pointing to your server IP as well as <code class="codehilite"><span class="err">www</span></code> alias if it's not a subodmain</p>
 <p>If you are behind a load-balancer or a proxy, and need to force WO to issue a certificate even if the domain doesn't resolve your server IP, you can use the flag <code class="codehilite"><span class="err">--force</span></code></p>
-<div class="codehilite"><pre><span></span>wo site update site.tld -le --force
-</pre></div>
+<div class="codehilite"><pre><span></span><code>wo site update site.tld -le --force
+</code></pre></div>
 
 <p>Then if you need to cleanup the previous SSL certificate, you can use the following command to remove existant certificates and keys, as well as other Nginx configurations for your domain:</p>
-<div class="codehilite"><pre><span></span>wo site update site.tld --letsencrypt<span class="o">=</span>clean
-</pre></div>
+<div class="codehilite"><pre><span></span><code>wo site update site.tld --letsencrypt<span class="o">=</span>clean
+</code></pre></div>
 
 <hr />
 <h2 id="when-i-update-a-page-changes-are-not-applied-on-the-site">When I update a page, changes are not applied on the site<a class="headerlink" href="#when-i-update-a-page-changes-are-not-applied-on-the-site" title="Permanent link">&para;</a></h2>
@@ -1211,7 +1223,7 @@ As a workaround you can either use the command <code class="codehilite"><span cl
 </ul>
 <h2 id="wordops-commands-are-not-working">WordOps commands are not working<a class="headerlink" href="#wordops-commands-are-not-working" title="Permanent link">&para;</a></h2>
 <p>If the error output looks like:</p>
-<div class="codehilite"><pre><span></span>Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
+<div class="codehilite"><pre><span></span><code>Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
   File <span class="s2">&quot;/usr/local/bin/wo&quot;</span>, line <span class="m">6</span>, in &lt;module&gt;
     from pkg_resources import load_entry_point
   File <span class="s2">&quot;/usr/lib/python3/dist-packages/pkg_resources/__init__.py&quot;</span>, line <span class="m">3088</span>, in &lt;module&gt;
@@ -1227,11 +1239,11 @@ As a workaround you can either use the command <code class="codehilite"><span cl
   File <span class="s2">&quot;/usr/lib/python3/dist-packages/pkg_resources/__init__.py&quot;</span>, line <span class="m">778</span>, in resolve
     raise DistributionNotFound<span class="o">(</span>req, requirers<span class="o">)</span>
 pkg_resources.DistributionNotFound: The <span class="s1">&#39;wo==3.9.8.2&#39;</span> distribution was not found and is required by the application
-</pre></div>
+</code></pre></div>
 
 <p>Just remove the executable <code class="codehilite"><span class="err">/usr/local/bin/wo</span></code> and reinstall WordOps:</p>
-<div class="codehilite"><pre><span></span>sudo rm /usr/local/bin/wo <span class="o">&amp;&amp;</span> wget -qO wo wops.cc <span class="o">&amp;&amp;</span> sudo bash wo
-</pre></div>
+<div class="codehilite"><pre><span></span><code>sudo rm /usr/local/bin/wo <span class="o">&amp;&amp;</span> wget -qO wo wops.cc <span class="o">&amp;&amp;</span> sudo bash wo
+</code></pre></div>
                 
                   
                 
@@ -1280,24 +1292,24 @@ pkg_resources.DistributionNotFound: The <span class="s1">&#39;wo==3.9.8.2&#39;</
           </div>
         
         powered by
-        <a href="https://www.mkdocs.org">MkDocs</a>
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
         and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs</a>
       </div>
       
   <div class="md-footer-social">
     <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
     
-      <a href="https://wordops.net" class="md-footer-social__link fa fa-globe"></a>
+      <a href="https://wordops.net" target="_blank" rel="noopener" title="globe" class="md-footer-social__link fa fa-globe"></a>
     
-      <a href="https://github.com/WordOps" class="md-footer-social__link fa fa-github-alt"></a>
+      <a href="https://github.com/WordOps" target="_blank" rel="noopener" title="github-alt" class="md-footer-social__link fa fa-github-alt"></a>
     
-      <a href="https://twitter.com/WordOps_" class="md-footer-social__link fa fa-twitter"></a>
+      <a href="https://twitter.com/WordOps_" target="_blank" rel="noopener" title="twitter" class="md-footer-social__link fa fa-twitter"></a>
     
-      <a href="https://community.wordops.io/slack" class="md-footer-social__link fa fa-slack"></a>
+      <a href="https://community.wordops.io/slack" target="_blank" rel="noopener" title="slack" class="md-footer-social__link fa fa-slack"></a>
     
-      <a href="https://community.wordops.net" class="md-footer-social__link fa fa-comments"></a>
+      <a href="https://community.wordops.net" target="_blank" rel="noopener" title="comments" class="md-footer-social__link fa fa-comments"></a>
     
   </div>
 
@@ -1307,7 +1319,7 @@ pkg_resources.DistributionNotFound: The <span class="s1">&#39;wo==3.9.8.2&#39;</
       
     </div>
     
-      <script src="../../assets/javascripts/application.808e90bb.js"></script>
+      <script src="../../assets/javascripts/application.c33a9706.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       

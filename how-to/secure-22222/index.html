@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.3">
     
     
       
@@ -42,7 +42,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.1b62728e.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.adb8469c.css">
       
         <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
       
@@ -53,14 +53,14 @@
       
     
     
-      <script src="../../assets/javascripts/modernizr.268332fc.js"></script>
+      <script src="../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
     
     <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
     
-      <link rel="manifest" href="../../manifest.webmanifest">
+      <link rel="manifest" type="application/manifest+json" href="../../manifest.webmanifest" crossorigin="use-credentials">
     
     
       <link rel="stylesheet" href="../../css/extra.css">
@@ -89,7 +89,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#how-to-secure-wordops-backend-with-lets-encrypt-ssl-certificate" tabindex="1" class="md-skip">
+      <a href="#how-to-secure-wordops-backend-with-lets-encrypt-ssl-certificate" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -98,9 +98,9 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../.." title="WordOps Documentation" class="md-header-nav__button md-logo">
+        <a href="../.." title="WordOps Documentation" aria-label="WordOps Documentation" class="md-header-nav__button md-logo">
           
-            <img src="../../images/logo-icon.png" width="24" height="24">
+            <img alt="logo" src="../../images/logo-icon.png" width="24" height="24">
           
         </a>
       </div>
@@ -129,7 +129,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
       <label class="md-icon md-search__icon" for="__search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
         &#xE5CD;
@@ -306,7 +306,7 @@
   <label class="md-nav__title md-nav__title--site" for="__drawer">
     <a href="../.." title="WordOps Documentation" class="md-nav__button md-logo">
       
-        <img src="../../images/logo-icon.png" width="48" height="48">
+        <img alt="logo" src="../../images/logo-icon.png" width="48" height="48">
       
     </a>
     WordOps Documentation
@@ -876,6 +876,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../setup-basic-auth/" title="Setup basic auth on site" class="md-nav__link">
+      Setup basic auth on site
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1188,8 +1200,8 @@
 So you just have to create basic site with the arguments <code class="codehilite"><span class="err">--letsencrypt</span></code> or <code class="codehilite"><span class="err">-le</span></code> to secure the backend.</p>
 <p>Example :</p>
 <p>if your server hostname is properly configured (read below), you can use :</p>
-<div class="codehilite"><pre><span></span>wo site create server.domain.tld -le
-</pre></div>
+<div class="codehilite"><pre><span></span><code>wo site create server.domain.tld -le
+</code></pre></div>
 
 <p>Then you will be able to access to the backend with the adress : <code class="codehilite"><span class="c">https://server.domain.tld:22222</span></code></p>
 <details class="info"><summary>Proper server hostname configuration</summary><p>Server hostname isn't only a name, it's the server public identity on the network. If your server is directly connected to internet(not behind a NAT),
@@ -1200,8 +1212,8 @@ it should have a valid hostname.</p>
 <li>yourdomain.tld is one of your domains</li>
 </ul>
 <p>To edit hostname properly, use the command :</p>
-<div class="codehilite"><pre><span></span>hostnamectl set-hostname &lt;yourserver.hostname.tld&gt;
-</pre></div>
+<div class="codehilite"><pre><span></span><code>hostnamectl set-hostname &lt;yourserver.hostname.tld&gt;
+</code></pre></div>
 
 <p>To apply the new hostname, a reboot is required.
 The last step and the most important, you should create the proper DNS records to make the subdomain myservername.yourdomain.tld pointing to your server IP.</p>
@@ -1209,50 +1221,50 @@ The last step and the most important, you should create the proper DNS records t
 <h2 id="using-another-certificate">Using another certificate<a class="headerlink" href="#using-another-certificate" title="Permanent link">&para;</a></h2>
 <h3 id="secure-wordops-backend-with-the-same-certificate-than-another-site">Secure WordOps backend with the same certificate than another site<a class="headerlink" href="#secure-wordops-backend-with-the-same-certificate-than-another-site" title="Permanent link">&para;</a></h3>
 <p>If you already have a site secured with Let's Encrypt, you just have to copy the <code class="codehilite"><span class="err">ssl.conf</span></code> file stored in <code class="codehilite"><span class="err">/var/www/site.tld/conf/nginx</span></code>.</p>
-<div class="codehilite"><pre><span></span><span class="nv">DOMAIN_NAME</span><span class="o">=</span>site.ltd
+<div class="codehilite"><pre><span></span><code><span class="nv">DOMAIN_NAME</span><span class="o">=</span>site.ltd
 sudo grep <span class="s2">&quot;ssl_&quot;</span> <span class="se">\</span>
  /var/www/<span class="si">${</span><span class="nv">DOMAIN_NAME</span><span class="si">}</span>/conf/nginx/ssl.conf &gt; /var/www/22222/conf/nginx/ssl.conf
-</pre></div>
+</code></pre></div>
 
 <p>Then reload Nginx:</p>
-<div class="codehilite"><pre><span></span>wo stack restart --nginx
-</pre></div>
+<div class="codehilite"><pre><span></span><code>wo stack restart --nginx
+</code></pre></div>
 
 <p>You should now be able to access to WordOps backend on <code class="codehilite"><span class="c">https://site.tld:22222</span></code></p>
 <h3 id="issue-a-new-certificate-to-secure-wordops-backend">Issue a new certificate to secure WordOps backend<a class="headerlink" href="#issue-a-new-certificate-to-secure-wordops-backend" title="Permanent link">&para;</a></h3>
 <p>If you prefer to issue manually a new Let's Encrypt SSL certificate, here the steps to follow:</p>
 <p>Set your domain or subdomain as a variable:</p>
-<div class="codehilite"><pre><span></span><span class="nv">DOMAIN_NAME</span><span class="o">=</span>backend.site.ltd
-</pre></div>
+<div class="codehilite"><pre><span></span><code><span class="nv">DOMAIN_NAME</span><span class="o">=</span>backend.site.ltd
+</code></pre></div>
 
 <p>Issue the certificate</p>
-<div class="codehilite"><pre><span></span>acme.sh --issue -d <span class="nv">$DOMAIN_NAME</span> -k ec-384 -w /var/www/html
-</pre></div>
+<div class="codehilite"><pre><span></span><code>acme.sh --issue -d <span class="nv">$DOMAIN_NAME</span> -k ec-384 -w /var/www/html
+</code></pre></div>
 
 <p>If the certificate as issued successfully, create a directory to store the certificate</p>
-<div class="codehilite"><pre><span></span>sudo mkdir -p /etc/letsencrypt/live/<span class="si">${</span><span class="nv">DOMAIN_NAME</span><span class="si">}</span>
-</pre></div>
+<div class="codehilite"><pre><span></span><code>sudo mkdir -p /etc/letsencrypt/live/<span class="si">${</span><span class="nv">DOMAIN_NAME</span><span class="si">}</span>
+</code></pre></div>
 
 <p>Install the certificate</p>
-<div class="codehilite"><pre><span></span>acme.sh --install-cert -d <span class="nv">$DOMAIN_NAME</span> --ecc <span class="se">\</span>
+<div class="codehilite"><pre><span></span><code>acme.sh --install-cert -d <span class="nv">$DOMAIN_NAME</span> --ecc <span class="se">\</span>
 --cert-file /etc/letsencrypt/live/<span class="nv">$DOMAIN_NAME</span>/cert.pem <span class="se">\</span>
 --key-file /etc/letsencrypt/live/<span class="nv">$DOMAIN_NAME</span>/key.pem <span class="se">\</span>
 --fullchain-file /etc/letsencrypt/live/<span class="nv">$DOMAIN_NAME</span>/fullchain.pem <span class="se">\</span>
 --ca-file /etc/letsencrypt/live/<span class="nv">$DOMAIN_NAME</span>/ca.pem <span class="se">\</span>
 --reloadcmd <span class="s2">&quot;nginx -t &amp;&amp; systemctl restart nginx.service&quot;</span>
-</pre></div>
+</code></pre></div>
 
 <p>Create the Nginx configuration</p>
-<div class="codehilite"><pre><span></span>cat <span class="s">&lt;&lt;EOF &gt;/var/www/22222/conf/nginx/ssl.conf</span>
+<div class="codehilite"><pre><span></span><code>cat <span class="s">&lt;&lt;EOF &gt;/var/www/22222/conf/nginx/ssl.conf</span>
 <span class="s">    ssl_certificate /etc/letsencrypt/live/$DOMAIN_NAME/fullchain.pem;</span>
 <span class="s">    ssl_certificate_key     /etc/letsencrypt/live/$DOMAIN_NAME/key.pem;</span>
 <span class="s">    ssl_trusted_certificate /etc/letsencrypt/live/$DOMAIN_NAME/ca.pem;</span>
 <span class="s">EOF</span>
-</pre></div>
+</code></pre></div>
 
 <p>Then reload nginx</p>
-<div class="codehilite"><pre><span></span>wo stack restart --nginx
-</pre></div>
+<div class="codehilite"><pre><span></span><code>wo stack restart --nginx
+</code></pre></div>
                 
                   
                 
@@ -1315,24 +1327,24 @@ sudo grep <span class="s2">&quot;ssl_&quot;</span> <span class="se">\</span>
           </div>
         
         powered by
-        <a href="https://www.mkdocs.org">MkDocs</a>
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
         and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs</a>
       </div>
       
   <div class="md-footer-social">
     <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
     
-      <a href="https://wordops.net" class="md-footer-social__link fa fa-globe"></a>
+      <a href="https://wordops.net" target="_blank" rel="noopener" title="globe" class="md-footer-social__link fa fa-globe"></a>
     
-      <a href="https://github.com/WordOps" class="md-footer-social__link fa fa-github-alt"></a>
+      <a href="https://github.com/WordOps" target="_blank" rel="noopener" title="github-alt" class="md-footer-social__link fa fa-github-alt"></a>
     
-      <a href="https://twitter.com/WordOps_" class="md-footer-social__link fa fa-twitter"></a>
+      <a href="https://twitter.com/WordOps_" target="_blank" rel="noopener" title="twitter" class="md-footer-social__link fa fa-twitter"></a>
     
-      <a href="https://community.wordops.io/slack" class="md-footer-social__link fa fa-slack"></a>
+      <a href="https://community.wordops.io/slack" target="_blank" rel="noopener" title="slack" class="md-footer-social__link fa fa-slack"></a>
     
-      <a href="https://community.wordops.net" class="md-footer-social__link fa fa-comments"></a>
+      <a href="https://community.wordops.net" target="_blank" rel="noopener" title="comments" class="md-footer-social__link fa fa-comments"></a>
     
   </div>
 
@@ -1342,7 +1354,7 @@ sudo grep <span class="s2">&quot;ssl_&quot;</span> <span class="se">\</span>
       
     </div>
     
-      <script src="../../assets/javascripts/application.808e90bb.js"></script>
+      <script src="../../assets/javascripts/application.c33a9706.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       

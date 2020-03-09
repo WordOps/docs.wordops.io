@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.3">
     
     
       
@@ -42,7 +42,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.1b62728e.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.adb8469c.css">
       
         <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
       
@@ -53,14 +53,14 @@
       
     
     
-      <script src="../../assets/javascripts/modernizr.268332fc.js"></script>
+      <script src="../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
     
     <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
     
-      <link rel="manifest" href="../../manifest.webmanifest">
+      <link rel="manifest" type="application/manifest+json" href="../../manifest.webmanifest" crossorigin="use-credentials">
     
     
       <link rel="stylesheet" href="../../css/extra.css">
@@ -89,7 +89,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#post-install-steps" tabindex="1" class="md-skip">
+      <a href="#post-install-steps" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -98,9 +98,9 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../.." title="WordOps Documentation" class="md-header-nav__button md-logo">
+        <a href="../.." title="WordOps Documentation" aria-label="WordOps Documentation" class="md-header-nav__button md-logo">
           
-            <img src="../../images/logo-icon.png" width="24" height="24">
+            <img alt="logo" src="../../images/logo-icon.png" width="24" height="24">
           
         </a>
       </div>
@@ -129,7 +129,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
       <label class="md-icon md-search__icon" for="__search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
         &#xE5CD;
@@ -306,7 +306,7 @@
   <label class="md-nav__title md-nav__title--site" for="__drawer">
     <a href="../.." title="WordOps Documentation" class="md-nav__button md-logo">
       
-        <img src="../../images/logo-icon.png" width="48" height="48">
+        <img alt="logo" src="../../images/logo-icon.png" width="48" height="48">
       
     </a>
     WordOps Documentation
@@ -897,6 +897,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../how-to/setup-basic-auth/" title="Setup basic auth on site" class="md-nav__link">
+      Setup basic auth on site
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1228,14 +1240,14 @@
 <p>These are the first steps <strong>after</strong> you install WordOps. If you haven't installed it already, please check the <a href="../installation-guide/">installation guide</a>.</p>
 <h2 id="enable-bash_completion">Enable bash_completion<a class="headerlink" href="#enable-bash_completion" title="Permanent link">&para;</a></h2>
 <p>To enable WordOps commands auto-completion, run the following command after WordOps installation:</p>
-<div class="codehilite"><pre><span></span><span class="nb">source</span> /etc/bash_completion.d/wo_auto.rc
-</pre></div>
+<div class="codehilite"><pre><span></span><code><span class="nb">source</span> /etc/bash_completion.d/wo_auto.rc
+</code></pre></div>
 
 <h2 id="installing-wordops-stacks-optional">Installing WordOps stacks (optional)<a class="headerlink" href="#installing-wordops-stacks-optional" title="Permanent link">&para;</a></h2>
 <p>You can install WordOps main stacks with the following command before creating your first site, or create directly a site and WordOps will install required stacks.</p>
 <p>Installing WordOps main stacks</p>
-<div class="codehilite"><pre><span></span>wo stack install
-</pre></div>
+<div class="codehilite"><pre><span></span><code>wo stack install
+</code></pre></div>
 
 <p><asciinema-player src="/images/stackinstall.cast" autoplay loop cols="125" rows="30"></asciinema-player></p>
 <p>Here the list of WordOps components installed with the above command:</p>
@@ -1339,28 +1351,28 @@
 <h2 id="wordops-backend">WordOps backend<a class="headerlink" href="#wordops-backend" title="Permanent link">&para;</a></h2>
 <p>After installing Nginx, WordOps will display your login credentials to access to WordOps backend.
 You haven't saved them ? Don't worry, you can change them at anytime with the command :</p>
-<div class="codehilite"><pre><span></span>wo secure --auth
-</pre></div>
+<div class="codehilite"><pre><span></span><code>wo secure --auth
+</code></pre></div>
 
 <p>You will be prompted for a username and a password. If empty, WordOps will use the default username set during the installation and will generate a random password.</p>
 <p>You should now be able to access WordOps backend on <code class="codehilite"><span class="c">https://YOUR.SERVER.IP:22222</span></code> or <code class="codehilite"><span class="c">https://yourserver.hostname.tld:22222</span></code>. You will probably be warned about the SSL certificate, but you can learn how to secure WordOps backend with a valid SSL certificate in the next part.</p>
 <h2 id="securing-wordops-backend">Securing WordOps backend<a class="headerlink" href="#securing-wordops-backend" title="Permanent link">&para;</a></h2>
 <p>To secure WordOps backend with a valid SSL certificate, you just have to create a basic site with the domain/subdomain of your choice. WordOps will automatically use the first SSL certificate issued to secure the backend.</p>
 <p>Example :</p>
-<div class="codehilite"><pre><span></span>wo site create server.domain.tld -le
-</pre></div>
+<div class="codehilite"><pre><span></span><code>wo site create server.domain.tld -le
+</code></pre></div>
 
 <p>Then you will be able to access to the backend with : <code class="codehilite"><span class="c">https://server.domain.tld:22222</span></code></p>
 <h2 id="enabling-ufw-firewall">Enabling UFW Firewall<a class="headerlink" href="#enabling-ufw-firewall" title="Permanent link">&para;</a></h2>
 <p>If you haven't already configured a firewall on your server, you can use WordOps to automatically configure UFW with a minimal rules set for WordOps.</p>
-<div class="codehilite"><pre><span></span>wo stack install --ufw
-</pre></div>
+<div class="codehilite"><pre><span></span><code>wo stack install --ufw
+</code></pre></div>
 
 <h2 id="creating-an-alias-for-sudo-wo">Creating an alias for sudo wo<a class="headerlink" href="#creating-an-alias-for-sudo-wo" title="Permanent link">&para;</a></h2>
 <p>If you want to be able to use directly the command <code class="codehilite"><span class="err">wo</span></code> as non-root user, you can add a bash alias to automatically add <code class="codehilite"><span class="err">sudo</span></code> in front of the command <code class="codehilite"><span class="err">wo</span></code>.</p>
 <p>Use the following command to add the alias :</p>
-<div class="codehilite"><pre><span></span><span class="nb">echo</span> -e <span class="s2">&quot;alias wo=&#39;sudo -E wo&#39;&quot;</span> &gt;&gt; <span class="nv">$HOME</span>/.bashrc
-</pre></div>
+<div class="codehilite"><pre><span></span><code><span class="nb">echo</span> -e <span class="s2">&quot;alias wo=&#39;sudo -E wo&#39;&quot;</span> &gt;&gt; <span class="nv">$HOME</span>/.bashrc
+</code></pre></div>
 
 <p>Then apply it with <code class="codehilite"><span class="err">source $HOME/.bashrc</span></code></p>
                 
@@ -1425,24 +1437,24 @@ You haven't saved them ? Don't worry, you can change them at anytime with the co
           </div>
         
         powered by
-        <a href="https://www.mkdocs.org">MkDocs</a>
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
         and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs</a>
       </div>
       
   <div class="md-footer-social">
     <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
     
-      <a href="https://wordops.net" class="md-footer-social__link fa fa-globe"></a>
+      <a href="https://wordops.net" target="_blank" rel="noopener" title="globe" class="md-footer-social__link fa fa-globe"></a>
     
-      <a href="https://github.com/WordOps" class="md-footer-social__link fa fa-github-alt"></a>
+      <a href="https://github.com/WordOps" target="_blank" rel="noopener" title="github-alt" class="md-footer-social__link fa fa-github-alt"></a>
     
-      <a href="https://twitter.com/WordOps_" class="md-footer-social__link fa fa-twitter"></a>
+      <a href="https://twitter.com/WordOps_" target="_blank" rel="noopener" title="twitter" class="md-footer-social__link fa fa-twitter"></a>
     
-      <a href="https://community.wordops.io/slack" class="md-footer-social__link fa fa-slack"></a>
+      <a href="https://community.wordops.io/slack" target="_blank" rel="noopener" title="slack" class="md-footer-social__link fa fa-slack"></a>
     
-      <a href="https://community.wordops.net" class="md-footer-social__link fa fa-comments"></a>
+      <a href="https://community.wordops.net" target="_blank" rel="noopener" title="comments" class="md-footer-social__link fa fa-comments"></a>
     
   </div>
 
@@ -1452,7 +1464,7 @@ You haven't saved them ? Don't worry, you can change them at anytime with the co
       
     </div>
     
-      <script src="../../assets/javascripts/application.808e90bb.js"></script>
+      <script src="../../assets/javascripts/application.c33a9706.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       

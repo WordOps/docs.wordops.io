@@ -34,7 +34,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.3">
     
     
       
@@ -42,7 +42,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.1b62728e.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.adb8469c.css">
       
         <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
       
@@ -53,14 +53,14 @@
       
     
     
-      <script src="../../assets/javascripts/modernizr.268332fc.js"></script>
+      <script src="../../assets/javascripts/modernizr.86422ebf.js"></script>
     
     
       
     
     <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
     
-      <link rel="manifest" href="../../manifest.webmanifest">
+      <link rel="manifest" type="application/manifest+json" href="../../manifest.webmanifest" crossorigin="use-credentials">
     
     
       <link rel="stylesheet" href="../../css/extra.css">
@@ -89,7 +89,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#secure" tabindex="1" class="md-skip">
+      <a href="#secure" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -98,9 +98,9 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../.." title="WordOps Documentation" class="md-header-nav__button md-logo">
+        <a href="../.." title="WordOps Documentation" aria-label="WordOps Documentation" class="md-header-nav__button md-logo">
           
-            <img src="../../images/logo-icon.png" width="24" height="24">
+            <img alt="logo" src="../../images/logo-icon.png" width="24" height="24">
           
         </a>
       </div>
@@ -129,7 +129,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <input type="text" class="md-search__input" aria-label="search" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
       <label class="md-icon md-search__icon" for="__search"></label>
       <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
         &#xE5CD;
@@ -306,7 +306,7 @@
   <label class="md-nav__title md-nav__title--site" for="__drawer">
     <a href="../.." title="WordOps Documentation" class="md-nav__button md-logo">
       
-        <img src="../../images/logo-icon.png" width="48" height="48">
+        <img alt="logo" src="../../images/logo-icon.png" width="48" height="48">
       
     </a>
     WordOps Documentation
@@ -877,6 +877,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../how-to/setup-basic-auth/" title="Setup basic auth on site" class="md-nav__link">
+      Setup basic auth on site
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1188,8 +1200,8 @@
 <p>Secure command secure WordOps backend auth, ip and port</p>
 <p><asciinema-player src="/images/wosecure.cast" autoplay loop cols="125" rows="30"></asciinema-player></p>
 <p>Usage:</p>
-<div class="codehilite"><pre><span></span>wo secure <span class="o">[</span>options<span class="o">]</span>
-</pre></div>
+<div class="codehilite"><pre><span></span><code>wo secure <span class="o">[</span>options<span class="o">]</span>
+</code></pre></div>
 
 <p>Options:</p>
 <table>
@@ -1233,29 +1245,29 @@
 <p>WordOps uses <a href="https://docs.nginx.com/nginx/admin-guide/security-controls/configuring-http-basic-authentication/">Basic Auth</a> to protect the backend from unauthorize people. To change the authorization method, backend's port,... You can use <code class="codehilite"><span class="err">wo secure</span></code> command.</p>
 <h2 id="change-backend-credential">Change backend credential<a class="headerlink" href="#change-backend-credential" title="Permanent link">&para;</a></h2>
 <p>The user name and password of WordOps backend is showed when you create a first site. If you don't remember and want to reset, please use below command.</p>
-<div class="codehilite"><pre><span></span>wo secure --auth
+<div class="codehilite"><pre><span></span><code>wo secure --auth
 Provide HTTP authentication user name <span class="o">[</span>admin<span class="o">]</span>:master
 Provide HTTP authentication password <span class="o">[</span>5zVFELjHjShPPFr7qkoMzavP<span class="o">]</span>:
-</pre></div>
+</code></pre></div>
 
 <p>Short hand:</p>
-<div class="codehilite"><pre><span></span>wo secure --auth YourUsername aSecurePassword
-</pre></div>
+<div class="codehilite"><pre><span></span><code>wo secure --auth YourUsername aSecurePassword
+</code></pre></div>
 
 <h2 id="change-backend-port">Change backend port<a class="headerlink" href="#change-backend-port" title="Permanent link">&para;</a></h2>
 <p>In case you want to change WordOps backend port from <code class="codehilite"><span class="err">22222</span></code>, use this command:</p>
-<div class="codehilite"><pre><span></span>wo secure --port
+<div class="codehilite"><pre><span></span><code>wo secure --port
 WordOps admin port <span class="o">[</span><span class="m">22222</span><span class="o">]</span>:23456
 Reload: nginx     <span class="o">[</span>OK<span class="o">]</span>
 Successfully port changed <span class="m">23456</span>
-</pre></div>
+</code></pre></div>
 
 <h2 id="change-whitelist-ips">Change whitelist IPs<a class="headerlink" href="#change-whitelist-ips" title="Permanent link">&para;</a></h2>
 <p><a href="https://github.com/WordOps/WordOps/blob/master/wo/cli/templates/acl.mustache">By default</a>, WordOps only allow IP <code class="codehilite"><span class="err">127.0.0.1</span></code> to connect to their backend. To allow your IP (ex. <code class="codehilite"><span class="err">1.1.1.1</span></code>), use below command:</p>
-<div class="codehilite"><pre><span></span>wo secure --ip
+<div class="codehilite"><pre><span></span><code>wo secure --ip
 Enter the comma separated IP addresses to white list <span class="o">[</span><span class="m">127</span>.0.0.1<span class="o">]</span>:1.1.1.1
 Successfully added IP address in acl.conf file
-</pre></div>
+</code></pre></div>
 
 <p>You can also edit directly the file <code class="codehilite"><span class="err">/etc/nginx/common/acl.conf</span></code></p>
 <h2 id="harden-ssh-security">Harden SSH security<a class="headerlink" href="#harden-ssh-security" title="Permanent link">&para;</a></h2>
@@ -1264,22 +1276,22 @@ Successfully added IP address in acl.conf file
 <p>To harden SSH security, WordOps render the configuration sshd_config from a template. In this template, root authentification with password is forbidden and by default password authentification is disabled. You can use the flag <code class="codehilite"><span class="err">--allowpassword</span></code> with <code class="codehilite"><span class="err">--ssh</span></code> to allow password authentification, but before running this command please make sure you will not be locked out of your server. Using password-less authentification with SSH keys is highly recommended.</p>
 </div>
 <p>To harden SSH security you can use the command :</p>
-<div class="codehilite"><pre><span></span>wo secure --ssh
-</pre></div>
+<div class="codehilite"><pre><span></span><code>wo secure --ssh
+</code></pre></div>
 
 <p>Additionally, if you want to allow password authentification (not recommended), you can use :</p>
-<div class="codehilite"><pre><span></span>wo secure --ssh --allowpassword
-</pre></div>
+<div class="codehilite"><pre><span></span><code>wo secure --ssh --allowpassword
+</code></pre></div>
 
 <h2 id="change-ssh-port">Change SSH port<a class="headerlink" href="#change-ssh-port" title="Permanent link">&para;</a></h2>
 <p>To avoid bruteforce on SSH, it's recommended to use another port than the default port (22).</p>
 <p>Usage :</p>
-<div class="codehilite"><pre><span></span>wo secure --sshport &lt;port&gt;
-</pre></div>
+<div class="codehilite"><pre><span></span><code>wo secure --sshport &lt;port&gt;
+</code></pre></div>
 
 <p>Exemple :</p>
-<div class="codehilite"><pre><span></span>wo secure --sshport <span class="m">2022</span>
-</pre></div>
+<div class="codehilite"><pre><span></span><code>wo secure --sshport <span class="m">2022</span>
+</code></pre></div>
 
 <p>WordOps will automatically allow the new SSH port if UFW is enabled.</p>
                 
@@ -1344,24 +1356,24 @@ Successfully added IP address in acl.conf file
           </div>
         
         powered by
-        <a href="https://www.mkdocs.org">MkDocs</a>
+        <a href="https://www.mkdocs.org" target="_blank" rel="noopener">MkDocs</a>
         and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
           Material for MkDocs</a>
       </div>
       
   <div class="md-footer-social">
     <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
     
-      <a href="https://wordops.net" class="md-footer-social__link fa fa-globe"></a>
+      <a href="https://wordops.net" target="_blank" rel="noopener" title="globe" class="md-footer-social__link fa fa-globe"></a>
     
-      <a href="https://github.com/WordOps" class="md-footer-social__link fa fa-github-alt"></a>
+      <a href="https://github.com/WordOps" target="_blank" rel="noopener" title="github-alt" class="md-footer-social__link fa fa-github-alt"></a>
     
-      <a href="https://twitter.com/WordOps_" class="md-footer-social__link fa fa-twitter"></a>
+      <a href="https://twitter.com/WordOps_" target="_blank" rel="noopener" title="twitter" class="md-footer-social__link fa fa-twitter"></a>
     
-      <a href="https://community.wordops.io/slack" class="md-footer-social__link fa fa-slack"></a>
+      <a href="https://community.wordops.io/slack" target="_blank" rel="noopener" title="slack" class="md-footer-social__link fa fa-slack"></a>
     
-      <a href="https://community.wordops.net" class="md-footer-social__link fa fa-comments"></a>
+      <a href="https://community.wordops.net" target="_blank" rel="noopener" title="comments" class="md-footer-social__link fa fa-comments"></a>
     
   </div>
 
@@ -1371,7 +1383,7 @@ Successfully added IP address in acl.conf file
       
     </div>
     
-      <script src="../../assets/javascripts/application.808e90bb.js"></script>
+      <script src="../../assets/javascripts/application.c33a9706.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       
