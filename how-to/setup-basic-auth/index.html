@@ -875,6 +875,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../automate-wordops-install/" title="Automate WordOps installation" class="md-nav__link">
+      Automate WordOps installation
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -1171,22 +1183,22 @@
                 <h1 id="setup-basic-auth-on-site">Setup basic auth on site<a class="headerlink" href="#setup-basic-auth-on-site" title="Permanent link">&para;</a></h1>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
 <p>Install Apache Utilities:</p>
-<div class="codehilite"><pre><span></span><code><span class="err">apt install apache2-utils</span>
+<div class="codehilite"><pre><span></span><code>apt install apache2-utils
 </code></pre></div>
 
 <h2 id="create-password-file">Create password file<a class="headerlink" href="#create-password-file" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code><span class="err">htpasswd -c /var/www/domain.tld/conf/nginx/.htpasswd username</span>
+<div class="codehilite"><pre><span></span><code>htpasswd -c /var/www/domain.tld/conf/nginx/.htpasswd username
 </code></pre></div>
 
 <p>You will be asked to supply and confirm a password for the user.</p>
 <h2 id="configure-nginx">Configure nginx<a class="headerlink" href="#configure-nginx" title="Permanent link">&para;</a></h2>
 <p>Edit <code class="codehilite"><span class="err">/var/www/domain.tld/conf/nginx/auth.conf</span></code>:</p>
-<div class="codehilite"><pre><span></span><code><span class="err">auth_basic &quot;Restricted Access&quot;;</span>
-<span class="err">auth_basic_user_file /var/www/domain.tld/conf/nginx/.htpasswd;</span>
+<div class="codehilite"><pre><span></span><code>auth_basic <span class="s2">&quot;Restricted Access&quot;</span><span class="p">;</span>
+auth_basic_user_file /var/www/domain.tld/conf/nginx/.htpasswd<span class="p">;</span>
 </code></pre></div>
 
 <p>Reload nginx:</p>
-<div class="codehilite"><pre><span></span><code><span class="err">nginx -t &amp;&amp; service nginx reload</span>
+<div class="codehilite"><pre><span></span><code>wo stack reload --nginx
 </code></pre></div>
                 
                   
@@ -1224,13 +1236,13 @@
           </a>
         
         
-          <a href="../../guides/" title="Overview" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../automate-wordops-install/" title="Automate WordOps installation" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Overview
+                Automate WordOps installation
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
